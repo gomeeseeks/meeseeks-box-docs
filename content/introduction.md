@@ -4,11 +4,17 @@ anchor: "introduction"
 weight: 10
 ---
 
-[Meeseeks-box](https://github.com/pcarranza/meeseeks-box) is a ChatOps Construction Kit that allows anyone to build your own automations following the UNIX principle of using small tools that know how to do 1 thing right.
+[Meeseeks-box](https://github.com/pcarranza/meeseeks-box) is a ChatOps
+Construction Kit that allows anyone to build your own automations following the
+UNIX principle of using small tools that know how to do 1 thing right.
 
-In the case of the Meeseeks-Box itself, it knows how to talk to Slack, listen for messages and dispatch jobs to be executed as if it was being executed by a user in bash.
+In the case of the Meeseeks-Box itself, it knows how to talk to Slack, listen
+for messages and dispatch jobs to be executed as if it was being executed by a
+user in bash.
 
-The idea started when using [COG](https://github.com/operable/cog) to automate tasks and finding it complex or hard to build automations that could be simply scripted in bash.
+The idea started when using [COG](https://github.com/operable/cog) to automate
+tasks and finding it complex or hard to build automations that could be simply
+scripted in bash.
 
 ## Simplicity
 
