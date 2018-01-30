@@ -1,10 +1,8 @@
 ---
-title: "Configuring commands"
-anchor: "configuring-commands"
+title: "Configuring Shell Commands"
+anchor: "configuring-shell-commands"
 weight: 30
 ---
-
-## Configuring Commands
 
 Simply add those commands to the yaml configuration file, like this:
 
@@ -26,8 +24,7 @@ When invoking this command, the execution will be translated into calling the `e
 
 As stated before, the `command` has to be an executable, it has to be inside the path and can only be a single word.
 
-
-### Options
+## Options
 
 A command can be configured the following way:
 
@@ -49,7 +46,7 @@ A command can be configured the following way:
 
 Running a command with docker, for example, would look like this
 
-```
+```yaml
 groups:
   docker: ["pablo"]
 commands:
@@ -57,7 +54,6 @@ commands:
     command: docker
     args:
       - "run"
-      - "-it"
       - "--rm"
       - "container-image:latest"
     auth_strategy: group
@@ -66,3 +62,18 @@ commands:
 ```
 
 This will launch a container image every time the command in invoked.
+
+### Environment variables
+
+Environment variables defined when launching the process will percolate to
+the executed shell processes. This is so because of the fork/exec model and
+because it is how Unix works.
+
+This can be particularly useful to define secrets and other process
+configurations following the 12 factor app model.
+
+A caveat is that no environment variable will be expanded when calling a
+command, so if a command is defined such that an argument is an environment
+variable it will simply not work. If you need to use environment variables to
+call a specific executable somehow consider wrapping it with a bash command
+where the expansion will happen.

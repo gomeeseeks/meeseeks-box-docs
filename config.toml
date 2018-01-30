@@ -40,4 +40,4 @@ theme = "hugo-simpledoc-theme"
     headerDescription = ""
     
     # Back-to-top button name
-    bttButton = "go to top"
+    bttButton = "back to top"
