@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "http://pcarranza.github.io/meeseeks-box"
+baseURL = "http://gomeeseeks.github.io/meeseeks-box"
 languageCode = "en-us"
 title = "Meeseeks Box"
 theme = "hugo-simpledoc-theme"
