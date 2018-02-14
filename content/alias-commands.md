@@ -6,7 +6,7 @@ weight: 40
 
 Aliases are a convenient way to create shortcuts for complex commands. Instead of typing all the flags, which can be prone to typos, one can simply add an alias for the whole command and that can be as short as a single letter.
 
-Aliases are set per-user. This menans you can't see other users' aliases nor there are global shared aliases. Two users can set the same alias without collisions.
+Aliases are set per-user. This means you can't see other users' aliases nor there are global shared aliases. Two users can set the same alias without collisions.
 
 ## User Commands
 
