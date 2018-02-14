@@ -9,17 +9,17 @@ any time a job can be queried for status, get the logs as they are being
 streamed, and of course, they can be cancelled.
 
 Job cancellation internally works the same way a timeout is handled. This means
-that the job will get a kill signal, and as a result it will err out, leaving
+that the job will get a kill signal, and as a result it will error out, leaving
 the final state of the job as failed.
 
-Still, any log that was streamed up to that point will still be recorded,
-meaning that the user can evaluate how far the command reached.
+Still, any log that was streamed up to that point will be recorded, meaning
+that the user can evaluate how far the command reached.
 
 ## Cancelling a job
 
-* `cancel` cancels a job owned by the calling user that is currently running
+* `cancel <job id>` cancels a job owned by the calling user that is currently running
 
-* `kill` cancels a job owned by any user. This commands requires the calling user to be in the admin group.
+* `kill <job id>` cancels a job owned by any user. This commands requires the calling user to be in the admin group.
 
 Both commands behave the same way, with the only caveat of permissions and
 scope.
