@@ -18,7 +18,7 @@ Docker images for both amd64 and armv6 are provided. To launch a meeseeks box ju
 docker run -it --rm \
   --env-file %(pwd)/environment \
   -v $(pwd)/meeseeks-box.yaml:/meeseeks.yaml \
-  pcarranza/meeseeks-box \
+  gomeeseeks/meeseeks-box \
   -config /meeseeks.yaml
 ```
 
@@ -33,7 +33,7 @@ Because docker images are provided, it's trivial to run a meeseeks-box inside a 
 
 ### Running on raspberrypi
 
-To run on a raspberripy cluster you only need to change the container image to `pcarranza/meeseeks-box-armv6`
+To run on a raspberripy cluster you only need to change the container image to `gomeeseeks/meeseeks-box-armv6`
 
 ## Starting to use the meeseeks-box
 
