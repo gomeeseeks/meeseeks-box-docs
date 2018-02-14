@@ -18,18 +18,18 @@ Sets an alias for a command, including flags.
 
 Sample:
 
->omame [11:27]<br />
+>omame [11:27]
 >@marvin alias ps audit -status running
 >
->marvin APP [11:27]<br />
->@omame Mr Meeseeks<br />
+>marvin APP [11:27]
+>@omame Mr Meeseeks
 >alias created successfully
 >
->omame [11:27]<br />
+>omame [11:27]
 >@marvin ps
 >
->marvin APP [11:27]<br />
->@omame All done!<br />
+>marvin APP [11:27]
+>@omame All done!
 >*44* - 3 days ago - *wait* by *omame* in *DM* - >*Running*
 
 ### `unalias <alias>`
@@ -38,12 +38,12 @@ Remove an alias.
 
 Sample:
 
->omame [11:28]<br />
+>omame [11:28]
 >@marvin unalias ps
 >
->marvin APP [11:28]<br />
->@omame All done!<br />
->- *pablo-failed* - `audit -status failed -user pablo`<br />
+>marvin APP [11:28]
+>@omame All done!
+>- *pablo-failed* - `audit -status failed -user pablo`
 >- *ps* - `audit -status running`
 
 ## Admin commands
