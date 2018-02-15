@@ -9,13 +9,6 @@ Meeseeks support commands to be invoked using a http API endpoint.
 This can be particularly useful when wired to an alerting system as this can be
 the seed to auto-remediation.
 
-The way it works is that an admin user can create a new API token using the
-`token-new` command and picking the user that will be linked to. The channel in
-which the command will be invoked (and in which to reply), and then the command
-and the arguments.
-
-Tokens then can be listed with `tokens` and can be revoked with `token-revoke`
-
 Tokens can only be managed in a direct message conversation, because otherwise
 they would be leaking to any user who has access the used channel. Any attempt
 to invoke any token command in an open channel will be rejected by the
@@ -58,4 +51,10 @@ the tail of the command execution text.
 
 This will return a list of the existing tokens with the following format:
 
-> - *TOKEN* @user at #channel _command args..._
+> - *UUID* @user at #channel _command args..._
+
+## Revoking api tokens
+
+* `token-revoke <UUID>`
+
+This will destroy the token and it will not be available anymore
