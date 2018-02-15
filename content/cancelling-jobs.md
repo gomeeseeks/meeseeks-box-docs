@@ -1,6 +1,6 @@
 ---
 title: "Cancelling job"
-date: 2018-02-14T13:43:27+01:00
+anchor: "cancelling-jobs"
 weight: 40
 ---
 

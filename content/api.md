@@ -1,6 +1,6 @@
 ---
-title: "Api"
-anchor: "api"
+title: "Commands Api"
+anchor: "commands-api"
 weight: 40
 ---
 
