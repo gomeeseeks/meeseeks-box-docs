@@ -20,25 +20,26 @@ meesseeks.
 
 This invokation will then return a UUID which is the API token. This UUID will
 be linked to the command with the proposed arguments. The command will be
-executed as the @user in the #channel.
+executed as the `@user` in the `#channel`. The command can be also an
+[alias](#alias-commands-family).
 
-Permissions-wise, the command access will be evaluated when it is being
-invoked, which means that an admin can create a token for a user who does not
-have access to the requested command, or the user can loose access to the
-command afterwards, in both cases, the token can be used, it will simply be
-rejected in execution time, resulting in an error in the registered #channel.
+Permissions-wise, the command access level will be evaluated when it is being
+invoked. This means that an admin can create a token for a user who does not
+have access to the requested command, or the user can lose access to the command
+afterwards. In both cases, the token can be used but the command will simply be
+rejected at execution time, resulting in an error in the registered `#channel`.
 
 ## Using an API token
 
-To use a created token, you should invoke the http api endpoint with a HTTP
+To use a token, you should invoke the HTTP API endpoint with a HTTP
 POST method. For example, using curl:
 
 `curl -X POST -H "TOKEN: <UUID>" localhost:9696/message`
 
-By default the http port is 9696 and the meeseeks are listening on 0.0.0.0.
+By default meeseeks-box HTTP API listens on `0.0.0.0:9696`.
 
-Additionally, it's possible to add more arguments to the invocation by adding
-them as a FORM, like this:
+Additionally, it is possible to add more arguments to the invocation by adding
+them as an HTTP form, like this:
 
 `curl -F 'message=arg1+arg2' -X POST -H "TOKEN: <UUID>" localhost:9696/message`
 
@@ -57,4 +58,4 @@ This will return a list of the existing tokens with the following format:
 
 * `token-revoke <UUID>`
 
-This will destroy the token and it will not be available anymore
+This will destroy the token and it will not be available anymore.
