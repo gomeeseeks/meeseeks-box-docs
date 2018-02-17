@@ -41,4 +41,4 @@ Once the process is running and you got `INFO[0000] Listening messages` printed 
 
 If you are talking in a public channel you will need to start any message with the bot handle for it to pay attention to you, if you are talking in DM you don't need to say the name.
 
-Go ahead and try issuing `help` to get a list of commands supported, or `version` to see what version have you installed.
+Go ahead and try issuing `help -all` to get a list of commands supported, or `version` to see what version have you installed.
