@@ -13,7 +13,10 @@ commands:
     command: "echo"
       auth_strategy: any
       timeout: 5
-      help: command that prints back the arguments passed
+      help:
+        summary: "command that prints back the arguments passed"
+        args:
+        - "any argument that is passed will be echoed back"
 ```
 
 Add as many commands as you need, with the only caveat tha they each command needs to have a different name.
@@ -38,7 +41,7 @@ A command can be configured the following way:
     permissions have to be explicit and conscious)
   - `group`: use `allowed_groups` to control who has access to this command
 - `allowed_groups`: list of groups allowed to run this command
-- `help`: help to be printed when using the builtin `help` command
+- `help`: help structure to be printed when using the builtin `help` command
 - `templates`: adds the capacity to change how the replies from this command
   are represented, check the Templating help for more details.
 
@@ -58,7 +61,11 @@ commands:
       - "container-image:latest"
     auth_strategy: group
     allowed_groups: ["docker"]
-    help: "Run the container-image docker image passing arguments in"
+    help:
+      summary: "Run the container-image docker image passing arguments in"
+      args:
+      - "docker image to run"
+      - "arguments to pass to docker..."
 ```
 
 This will launch a container image every time the command in invoked.
