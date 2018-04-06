@@ -35,13 +35,18 @@ A command can be configured the following way:
 - `args`: list of arguments to always prepend to the command
 - `timeout`: how long we allow the command to run until we cancel it, in
   seconds, 60 by default
-- `auth_strategy`: defined the authorization strategy
+- `auth_strategy`: defines the authorization strategy
   - `any`: everyone will be allowed to run this command
   - `none`: no user will be allowed to run this command (default value,
     permissions have to be explicit and conscious)
   - `group`: use `allowed_groups` to control who has access to this command
 - `allowed_groups`: list of groups allowed to run this command
+- `channel_strategy`: defines the channel authorization strategy
+  - `any`: the command can be invoked from any channel
+  - `im_only`: the command can only be invoked in an IM conversation
+  - `channel`: use `allowed_channels` to define which channels are allowed to invoke the command
 - `allowed_channels`: list of channels allowed to run this command, any if the list is empty.
+- `no_handshake`: when true, the bot will not issue a handshake message when the command is accepted.
 - `help`: help structure to be printed when using the builtin `help` command
 - `templates`: adds the capacity to change how the replies from this command
   are represented, check the Templating help for more details.
