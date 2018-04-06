@@ -41,6 +41,7 @@ A command can be configured the following way:
     permissions have to be explicit and conscious)
   - `group`: use `allowed_groups` to control who has access to this command
 - `allowed_groups`: list of groups allowed to run this command
+- `allowed_channels`: list of channels allowed to run this command, any if the list is empty.
 - `help`: help structure to be printed when using the builtin `help` command
 - `templates`: adds the capacity to change how the replies from this command
   are represented, check the Templating help for more details.
