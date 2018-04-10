@@ -43,7 +43,7 @@ A command can be configured the following way:
 - `allowed_groups`: list of groups allowed to run this command
 - `channel_strategy`: defines the channel authorization strategy
   - `any`: the command can be invoked from any channel
-  - `im_only`: the command can only be invoked in an IM conversation
+  - `im_only`: the command can only be invoked in an direct message conversation
   - `channel`: use `allowed_channels` to define which channels are allowed to invoke the command
 - `allowed_channels`: list of channels allowed to run this command, any if the list is empty.
 - `no_handshake`: when true, the bot will not issue a handshake message when the command is accepted.
@@ -67,6 +67,10 @@ commands:
       - "container-image:latest"
     auth_strategy: group
     allowed_groups: ["docker"]
+    channel_strategy: "channel"
+    allowed_channels:
+      - "general"
+    no_handshake: true
     help:
       summary: "Run the container-image docker image passing arguments in"
       args:
