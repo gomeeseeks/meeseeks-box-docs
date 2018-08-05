@@ -48,8 +48,6 @@ A command can be configured the following way:
 - `allowed_channels`: list of channels allowed to run this command, any if the list is empty.
 - `no_handshake`: when true, the bot will not issue a handshake message when the command is accepted.
 - `help`: help structure to be printed when using the builtin `help` command
-- `templates`: adds the capacity to change how the replies from this command
-  are represented, check the Templating help for more details.
 
 ### A slightly more complex example
 
