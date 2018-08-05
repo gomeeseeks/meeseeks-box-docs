@@ -7,7 +7,7 @@ weight: 50
 There are multiple formatting options to customize your meeseeks experience.
 They all start in the format section.
 
-## Command Templates
+## Templates
 
 Templates are used to render replies from the meeseeks, templating is done
 using go [text/template](https://golang.org/pkg/text/template/) language.
