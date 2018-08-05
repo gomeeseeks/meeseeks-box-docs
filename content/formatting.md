@@ -47,6 +47,24 @@ format:
     unauthorized: "{{ .command }} is not allowed to the requester"
 ```
 
+### Payload fields
+
+All replies have a set of fields which can be used together with the templating engine.
+
+These are all the fields that can be included in a reply.
+
+- **command** the command that was invoked.
+- **args** the list of arguments that were passed to the command, separated by spaces.
+- **user** the username of the user that invoked the command.
+- **userlink** the user in link format, printing it will trigger a mention.
+- **userid** the user ID.
+- **channel** the channel name in which the command was requested.
+- **channellink** the channel link, printing it results in a link to the channel.
+- **channelid** the channel ID.
+- **isim** a boolean indicating if the channel is an direct messaging channel.
+- **error** the error text, if the payload includes an error.
+- **output** the output of the command, if the command is returning an output in this reply.
+
 ## Messages
 
 The messages used to reply in a conversation used in the default templates
@@ -107,7 +125,7 @@ format:
     error: "#000000"
 ```
 
-### Helper functions
+## Helper functions
 
 There are a couple of functions that are added when rendering templates, these are useful to handle arrays, texts and some values.
 
@@ -116,6 +134,7 @@ There are a couple of functions that are added when rendering templates, these a
 - **`HumanizeSize`** will print a size in human readable format, ex. _"100Mb"_
 - **`HumanizeNumber`** will print a float in a human readable format, removing long trails of decimals.
 - **`Join`** joins a string slice into a single string using a joining char.
+
 
 ## Configuration samples
 
