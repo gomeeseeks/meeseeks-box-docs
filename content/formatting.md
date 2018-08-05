@@ -72,6 +72,28 @@ format:
 There can be more than 1 message on each section, they will be picked randomly
 when replying.
 
+## Reply Style
+
+The slack client supports sending messages with 2 styles:
+
+- **`attachment`** (default) - The message is sent as an
+  attachment, using a color decoration depending on what kind of message it is (read [below](#colors)).
+- **`text`** - The message is sent in plain text, without any decorations. URLs and
+  media are unfurled.
+
+This can be changed for each message type by adding a formatting section to the
+configuration file. Note that `handshake` can also be disabled entirely.
+
+```yaml
+format:
+  reply_styles:
+    handshake: disabled
+    failure: attachment
+    success: text
+    unknowncommand: attachment
+    unauthorized: attachment
+```
+
 ## Colors
 
 By default messages in attachment mode will show colors for errors, success and
@@ -85,40 +107,18 @@ format:
     error: "#000000"
 ```
 
-## Reply Style
-
-The slack client supports sending messages with 2 styles:
-
-- `text` this will be a plain message without any decoration in which urls and
-  media will be unfurled by default.
-- `attachment` this is the default, in which the message is posted as an
-  attachment, using a color decoration depending on what kind of message it is.
-
-This can be changed in a case by case by adding a formatting section to the
-configuration file.
-
-```yaml
-format:
-  reply_styles:
-    handshake: text
-    failure: attachment
-    success: text
-    unknowncommand: attachment
-    unauthorized: attachment
-```
-
 ### Helper functions
 
 There are a couple of functions that are added when rendering templates, these are useful to handle arrays, texts and some values.
 
-- `AnyValue` will pick a random value from a string slice.
-- `HumanizeTime` will print a time in human readable format, ex. _6 hours ago_
-- `HumanizeSize` will print a size in human readable format, ex. _100Mb_
-- `HumanizeNumber` will pring a float in a human readable format, removing long trails of decimals.
-- `Join` joins a string slice into a single string using a joining char.
+- **`AnyValue`** will pick a random value from a string slice.
+- **`HumanizeTime`** will print a time in human readable format, ex. _"6 hours ago"_
+- **`HumanizeSize`** will print a size in human readable format, ex. _"100Mb"_
+- **`HumanizeNumber`** will print a float in a human readable format, removing long trails of decimals.
+- **`Join`** joins a string slice into a single string using a joining char.
 
 ## Configuration samples
 
-In [here](https://github.com/gomeeseeks/meeseeks-box/tree/master/docs/examples/personas)
-you can see a couple of configuration samples for different templates and
+[Here](https://github.com/gomeeseeks/meeseeks-box/tree/master/docs/examples/personas)
+you can see a couple of configuration examples for different templates and
 messages.
